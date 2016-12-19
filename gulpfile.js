@@ -12,7 +12,7 @@ var util = require('gulp-util');
 gulp.task('build', ['build-es6-js']);
 
 gulp.task('build-es6-js', function() {
-	gulp.src('./index.js')
+	gulp.src('./build/index.es6.js')
 		.pipe(browserify({transform: ['babelify']}))
 		.on('error', function(err) { console.log(err); util.beep(); this.emit('end'); })
 		.pipe(rename('index.js'))
